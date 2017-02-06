@@ -1,0 +1,7 @@
+  html, 
+  body{
+  background: url('../general_files/backgrounds/PlaneDep.JPG');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,0 +1,155 @@
+#header{
+    width: 100%;
+    min-height: 6em;
+    overflow: hidden;
+    
+    font-family: "Lucida Bright", Georgia, serif;
+    /*border-bottom: 1px solid #ccc;*/
+}
+
+#logo{
+    /* Size matches small logo*/
+    width: 200px;
+    height: 58px;
+    background: url('../general_files/ppiLogo_small.png');
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+#navWrapper{
+    width: 100%;
+    height: 1.5em;
+    text-align: center;
+    float: left;
+    position: relative;
+}
+
+#navBar{
+    display: none;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    margin: 0;
+    padding: 5px;
+    float: left;
+    width: 100%;
+}
+
+#menuBtn{
+    width: 100%;
+    height: 1.25em;
+    font-size: 1.25em;
+    text-align: center;
+}
+
+#header a{
+    color: inherit;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 900;
+}
+
+#header a:hover{
+    text-decoration: underline;
+}
+
+#footer{
+    width: 100%;
+    height: 5em;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    
+    font-size: 0.7em;
+}
+
+#footer p{
+    -webkit-margin: 2px;
+    margin: 2px;
+}
+
+#footer a{
+    color: inherit;
+}
+
+#footer a:hover{
+    text-decoration: underline;
+}
+
+/* Medium screen sizes */
+@media screen and (min-width: 40.5em) and (min-device-width: 40.5em){
+    #header #logo{
+        width: 400px;
+        height: 116px;
+        background: url('../general_files/ppiLogo_med.png');
+    }
+    
+    #menuBtn{
+        display: none;
+    }
+    
+    #navBar{
+        text-align: left;
+        display: block;
+        padding: 5px;
+        float: none;
+        
+        width: 30em;
+        right: 0;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        
+        bottom: 0;
+        
+        background: none;
+        background-image: none;
+    }
+    
+    #navBar > li{
+        float: left;
+        display: block;
+        margin: 0;
+        padding: 0px 15px;
+        min-width: 40px;
+        position: relative;
+        font-size: 1.2em;
+        border-right: 1px dashed;
+    }
+}
+
+/* Largest screen sizes */
+@media screen and (min-width: 80em) and (min-device-width: 80em){
+    #header #logo{
+        width: 560px;
+        height: 147px;
+/*      width: 600px;  
+		height: 175px; */
+        background: url('../general_files/ppiLogo_large.png');
+        float: left;
+    }
+    
+    #navWrapper{
+        width: 50%;
+        max-width: 40em;
+        height: 175px;
+        float: right;
+        text-align: left;
+    }
+    
+    #navBar{
+        left: auto;
+        right: 1em;
+    }
+    
+    #footer{
+        font-weight: 900;
+    }
+}
+
+@media print{
+    /* Do not print header or footer */
+    #header{display: none;}
+    #footer{display: none;}
+}
