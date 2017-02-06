@@ -72,10 +72,13 @@ body {
 .masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
+  height: 40%;
+  width: 40%;
 }
 
 .masthead-nav > li {
   display: inline-block;
+  margin-top: 25px;
 }
 .masthead-nav > li + li {
   margin-left: 20px;

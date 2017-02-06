@@ -43,7 +43,7 @@
 
            <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand" style="font-family: 'Montserrat', serif;">PURDUE PILOTS INC</h3>
+              <img class="masthead-brand" src="general_files/ppiLogo_large.png" alt = "PURDUE PILOTS INC">
               <nav>
                 <ul class="nav masthead-nav">
                   <li class = "active"><a href="index.php">Home</a></li>
