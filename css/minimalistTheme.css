@@ -1,0 +1,255 @@
+/*
+    This style sheet tells general website elements what to do.
+    We specify default styles for small screens and then use media rules to 
+    change the behavior for larger screens.
+*/
+
+html{  
+    height: 100%;
+    background-color: black;
+}
+
+body{
+    /*Set up the foreground*/
+    color: #0c0c0c;
+    /*font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;*/
+    font-family: 'Open Sans', sans-serif;
+    /*font-weight: 400;*/
+    font-size: 13pt;
+    
+    /* Edges and such */
+    margin: 0;
+    padding: 0;
+    
+    height: 100%;
+}
+
+/* This is just for iOS devices, really... Gets turned off for larger screens*/
+#background{
+    min-width: 100%;
+    min-height: 100%;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    background-image: url('../general_files/backgrounds/clouds_med.jpg');
+    background-color:  black;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+#page{
+    min-height: 100%;
+    position: relative;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+#contentPane{
+    /*padding: 1em 3% 4em 3%;  Bottom padding is height of the footer */
+    padding: 1em 0 5em 0;   /*Bottom padding is height of the footer */
+    
+    overflow: hidden;
+    min-height: 80%;
+}
+
+#contentPane li{
+    padding-bottom: 0.25em;
+}
+
+a, a:visited{
+    color: #2A5DB0;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+}
+
+a.divLink{
+    /*The div container must have position: relative for this to work properly*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-image: url('../general_files/empty.gif');
+}
+
+.box{
+    background: rgba(255, 255, 255, 0.5);
+    border: solid 1px #aaa;
+    
+    padding: 5px;
+    overflow: hidden;
+}
+
+.button{
+    background: rgba(255, 255, 255, 0.5);
+    border: solid 1px #aaa;
+    border-radius: 7px;
+    
+    padding: 5px;
+    overflow: hidden;
+    
+    position: relative;
+}
+
+.button:hover{
+    background: rgba(255,255,255, 0.25);
+}
+
+.centered{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.centeredBoxColumns{
+    text-align:center;
+    overflow: hidden;
+    min-width: 90%;
+    margin: auto;
+}
+
+.centeredBoxColumns > div{
+    display: inline-block;
+    zoom: 1;
+    vertical-align: top;
+
+    position: relative;
+    float: none;
+    margin: 5px;
+}
+
+/* Make gold text*/
+g{
+    color: goldenrod;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+h1{font-size: 2.5em;}
+
+h2{font-size: 2.0em;}
+
+.officer{
+    border: 1px solid #4f4f4f;
+    border-radius: 7px;
+    width: 15em;
+    height: 7em;
+    min-height: 3em;
+}
+
+.officer:hover{
+    background: url('../general_files/Email-icon.png') center no-repeat rgba(255, 255, 255, 0.2);
+}
+.officer .name{
+    font-size: 1.5em;
+}
+
+.officer .office{
+    font-size: 0.75em;
+}
+    
+.topic{
+    padding: 1em 3% 5em 3%;
+    overflow: hidden;
+
+    background: -webkit-linear-gradient(rgba(255,255,255,0.22),rgba(255,255,255,0)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(rgba(255,255,255,0.22),rgba(255,255,255,0)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(rgba(255,255,255,0.22),rgba(255,255,255,0)); /*Fx 3.6-15*/
+    background: linear-gradient(rgba(255,255,255,0.22),rgba(255,255,255,0)); /*Standard*/
+}
+
+.topic.top{
+    background: none;
+}
+
+.topic .title{
+    font-size: 1.4em;
+}
+            
+#pageTitle, .topic .title{
+    text-align: center;
+}
+      
+.pageNav{
+    display: none;
+}
+
+/* For larger screens */
+@media screen and (min-width: 40.5em) and (min-device-width: 40.5em){
+    
+    /* Use more cool CSS3 background tricks and hide #background*/
+    html{
+        background-image: url('../general_files/backgrounds/clouds_med.jpg');
+        background-repeat: no-repeat;
+        background-position: top left;
+        background-attachment: fixed;
+
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+        overflow: hidden;
+    }
+    
+    body{
+        overflow: scroll;
+    }
+    
+    #background{display: none;}
+    
+    #contentPane{
+        padding: 1em 0 5em 0;   /*Bottom padding is height of the footer */
+    }
+    
+    h1{font-size: 3.5em;}
+
+    h2{font-size: 2.5em;}
+    
+    .topic{
+        padding: 1em 8% 5em 8%;
+    }
+    
+    .topic .title{
+        text-align: left;
+    }
+    
+    .pageNav{
+        display: block;
+        padding: 0 8%;
+        font-size: 0.75em;
+        font-weight: 900;
+    }
+
+    .pageNav .topicLink{
+        padding: 0 3px;
+        position: relative;
+        text-align: center;
+    }
+
+    .pageNav .topicLink:hover{
+        text-decoration: underline;
+    }
+
+    .pageNav .topicLink.last{
+        border-right: none;
+    }
+}
+
+/* 
+    Change to a larger background image if screen/device height exceeds
+    the hight of the default image
+*/
+@media screen and (min-width: 80em) and (min-device-width: 80em){
+    html, #background{
+        background-image: url('../general_files/backgrounds/clouds.jpg');
+    }
+} 
